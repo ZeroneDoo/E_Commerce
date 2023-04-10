@@ -4,7 +4,32 @@
 Application e-commerce made with laravel framework, tailwindcss, and daisy UI
 
 
+## Installation
 
+Install project laravel with composer
+
+```bash
+  composer install
+```
+Install tailwindcss with npm
+
+```bash
+  npm install
+```
+
+## Running Project
+
+Running laravel project
+
+```bash
+  php artisan serve
+```
+
+Running tailwindcss
+
+```bash
+  npm run dev
+```
 
 
 ## Collaborators
