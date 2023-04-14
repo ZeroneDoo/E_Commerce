@@ -11,7 +11,7 @@ Install project laravel with composer
 ```bash
   composer install
 ```
-Install tailwindcss with npm
+Install package node module with npm
 
 ```bash
   npm install
