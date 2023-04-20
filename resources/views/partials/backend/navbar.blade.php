@@ -4,7 +4,7 @@
     <!-- logo -->
     <div class="flex-none w-56 flex flex-row items-center">
         <img src="{{ asset('assets/img/logo.png') }}" class="w-10 flex-none">
-        <strong class="capitalize ml-1 flex-1">cleopatra</strong>
+        <strong class="capitalize ml-1 flex-1">Tugas Toko Online</strong>
 
         <button id="sliderBtn" class="flex-none text-right text-gray-900 hidden md:block">
             <i class="fad fa-list-ul"></i>
@@ -43,7 +43,7 @@
 
                 <button class="menu-btn focus:outline-none focus:shadow-outline flex flex-wrap items-center">
                     <div class="w-8 h-8 overflow-hidden rounded-full">
-                        <img class="w-full h-full object-cover" src="img/user.svg">
+                        <img class="w-full h-full object-cover" src="{{ asset('images/img.png') }}">
                     </div>
 
                     <div class="ml-2 capitalize flex ">
@@ -57,40 +57,7 @@
                 <div
                     class="text-gray-500 menu hidden md:mt-10 md:w-full rounded bg-white shadow-md absolute z-20 right-0 w-40 mt-5 py-2 animated faster">
 
-                    <!-- item -->
-                    <a class="px-4 py-2 block capitalize font-medium text-sm tracking-wide bg-white hover:bg-gray-200 hover:text-gray-900 transition-all duration-300 ease-in-out"
-                        href="#">
-                        <i class="fad fa-user-edit text-xs mr-1"></i>
-                        edit my profile
-                    </a>
-                    <!-- end item -->
-
-                    <!-- item -->
-                    <a class="px-4 py-2 block capitalize font-medium text-sm tracking-wide bg-white hover:bg-gray-200 hover:text-gray-900 transition-all duration-300 ease-in-out"
-                        href="#">
-                        <i class="fad fa-inbox-in text-xs mr-1"></i>
-                        my inbox
-                    </a>
-                    <!-- end item -->
-
-                    <!-- item -->
-                    <a class="px-4 py-2 block capitalize font-medium text-sm tracking-wide bg-white hover:bg-gray-200 hover:text-gray-900 transition-all duration-300 ease-in-out"
-                        href="#">
-                        <i class="fad fa-badge-check text-xs mr-1"></i>
-                        tasks
-                    </a>
-                    <!-- end item -->
-
-                    <!-- item -->
-                    <a class="px-4 py-2 block capitalize font-medium text-sm tracking-wide bg-white hover:bg-gray-200 hover:text-gray-900 transition-all duration-300 ease-in-out"
-                        href="#">
-                        <i class="fad fa-comment-alt-dots text-xs mr-1"></i>
-                        chats
-                    </a>
-                    <!-- end item -->
-
-                    <hr>
-
+                    
                     <!-- item -->
                     <a class="px-4 py-2 block capitalize font-medium text-sm tracking-wide bg-white hover:bg-gray-200 hover:text-gray-900 transition-all duration-300 ease-in-out"
                         href="#">
