@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AdminController;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,4 +16,10 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/home', function () {
     return view('frontend.Homepage');
+});
+
+Route::controller(AdminController::class)->group(function(){
+    Route::get("/admin", "index")->name("admin");
+    Route::get("/kategori", "kategori")->name("kategori");
+
 });
