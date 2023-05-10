@@ -19,7 +19,10 @@ Route::get('/home', function () {
 });
 
 Route::controller(AdminController::class)->group(function(){
-    Route::get("/admin", "index")->name("admin");
-    Route::get("/kategori", "kategori")->name("kategori");
-
+    Route::get("/admin", "viewHome")->name("view.home");
+    Route::get("/create", "viewBarang")->name("view.barang");
+    Route::post("/create", "postBarang")->name("post.barang");
+    Route::get("/edit/{id}", "editBarang")->name("edit.barang");
+    Route::post("/edit/{id}", "putBarang")->name("put.barang");
+    Route::get("/delete/{id}", "deleteBarang")->name("delete.barang");
 });

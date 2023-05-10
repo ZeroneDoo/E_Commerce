@@ -8,6 +8,8 @@
     <link rel="stylesheet" href="https://kit-pro.fontawesome.com/releases/v5.12.1/css/pro.min.css">
     <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/style.css') }}">
     <title>Admin</title>
+    @vite('resources/css/app.css')
+
 </head>
 
 <body class="bg-gray-100">
@@ -26,11 +28,11 @@
         <!-- end sidbar -->
 
         <!-- strat content -->
-        <div class="bg-gray-100 flex-1 p-6 md:mt-16">
+        <div class="bg-gray-100 flex-1 p-6 mt-16">
 
 
             <!-- General Report -->
-            <div class="grid grid-cols-4 gap-6 xl:grid-cols-1">
+            <div class="grid grid-cols-4 gap-6">
 
 
                 <!-- card -->
@@ -51,8 +53,9 @@
     <!-- script -->
     <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
     <script src="{{ asset('assets/js/scripts.js') }}"></script>
-    <!-- end script -->
 
+    <!-- end script -->
+    <script src="{{ asset('assets/js/add_item.js') }}"></script> 
 </body>
 
 </html>
