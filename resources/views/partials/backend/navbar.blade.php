@@ -57,13 +57,15 @@
                 <div
                     class="text-gray-500 menu hidden rounded bg-white shadow-md absolute z-20 right-0 w-40 mt-5 py-2 animated faster">
 
-                    
+
                     <!-- item -->
-                    <a class="px-4 py-2 block capitalize font-medium text-sm tracking-wide bg-white hover:bg-gray-200 hover:text-gray-900 transition-all duration-300 ease-in-out"
-                        href="#">
+                    <form action="{{ route('logout') }}" method="post">
+                        @csrf
+                        <button type="submit" class="px-4 py-2 block capitalize font-medium text-sm tracking-wide bg-white hover:bg-gray-200 hover:text-gray-900 transition-all duration-300 ease-in-out">
                         <i class="fad fa-user-times text-xs mr-1"></i>
                         log out
-                    </a>
+                        </button>
+                    </form>
                     <!-- end item -->
 
                 </div>

@@ -1243,7 +1243,7 @@ div.code-toolbar .toolbar button:hover {
   text-transform: lowercase
 }
 
-.alert {
+/* .alert {
   border-width: 1px;
   border-radius: 0.25rem;
   --bg-opacity: 1;
@@ -1254,8 +1254,8 @@ div.code-toolbar .toolbar button:hover {
   padding-left: 1.5rem;
   padding-right: 1.5rem;
   font-size: 0.875rem
-}
-
+} */
+/*
 .alert a {
   font-weight: 800;
   --text-opacity: 1;
@@ -1378,7 +1378,7 @@ div.code-toolbar .toolbar button:hover {
 
 .alert-close span {
   flex: 1 1 0%
-}
+} */
 
 .report-card:hover .card {
   box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);

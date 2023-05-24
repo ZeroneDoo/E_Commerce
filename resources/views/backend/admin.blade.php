@@ -64,4 +64,21 @@
             </tbody>
         </table>
     </div>
+
+
 @endsection
+
+@push('js')
+@if (Session::has('msg_info'))
+      <script>
+        Noticme.any({
+            text: "{{ Session::get('msg_info') }}",
+            type: "info",
+            color: "blue",
+            icon: "info",
+            timer: 5000
+        })
+      </script>
+      @endif
+@endpush
+

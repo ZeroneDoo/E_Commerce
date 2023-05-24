@@ -9,6 +9,7 @@
     <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/style.css') }}">
     <title>Admin</title>
     @vite('resources/css/app.css')
+    <script src="{{ asset('assets/js/Noticme.min.js') }}"></script>
 
 </head>
 
@@ -55,7 +56,9 @@
     <script src="{{ asset('assets/js/scripts.js') }}"></script>
 
     <!-- end script -->
-    <script src="{{ asset('assets/js/add_item.js') }}"></script> 
+    <script src="{{ asset('assets/js/add_item.js') }}"></script>
+
+    @stack('js')
 </body>
 
 </html>

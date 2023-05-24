@@ -54,7 +54,22 @@ class AdminController extends Controller
     public function putBarang(Request $request, $id)
     {
         $update = Barang::find($id);
-        $update->update($request->all());
+
+
+        $data = [
+            'nama' => $request->nama,
+            'harga' => $request->harga,
+            'stok' => $request->stok,
+            'deskripsi' => $request->deskripsi,
+        ];
+
+        if(isset($request->gambar)){
+            $imageName = time().".".$request->gambar->extension();
+            $request->gambar->storeAs('public/images', $imageName);
+            $data['gambar'] = $imageName;
+        }
+
+        $update->update($data);
         return redirect('admin');
     }
 
