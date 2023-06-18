@@ -11,4 +11,15 @@ class UserController extends Controller
         $datas = Barang::all();
         return view('frontend.Homepage', compact('datas'));
     }
+
+    public function detail($id)
+    {
+        $data = Barang::find($id);
+
+        return view('frontend.Detailpage', compact('data'));
+    }
+
+    public function cart(){
+        return view('frontend.Cart');
+    }
 }

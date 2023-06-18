@@ -19,7 +19,7 @@
                     <span class="font-bold text-lg">8 Items</span>
                     <span class="text-error">Subtotal: $999</span>
                     <div class="card-actions">
-                        <button class="btn btn-primary btn-block text-white">View cart</button>
+                        <a href="{{ route('cart') }}" class="btn btn-primary btn-block text-white">View cart</a>
                     </div>
                 </div>
             </div>
@@ -30,7 +30,7 @@
                     @php
                         $foto = Auth::check() ? Auth::user()->profile : 'default.png';
                     @endphp
-                    <img src='{{ asset("storage/images/$foto") }}' />
+                    <img src='{{ asset("images/img.png") }}' />
                 </div>
             </label>
             <ul tabindex="0"

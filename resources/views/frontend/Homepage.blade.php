@@ -2,14 +2,16 @@
 
 @section('content')
 {{-- <h1 class="my-2">Popular on this week</h1> --}}
-    <div class="grid xl:grid-cols-5 lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 gap-12 mx-auto w-fit">
+    <div class="grid p-9 xl:grid-cols-5 lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 gap-12 mx-auto w-fit">
         @foreach ($datas as $data)
-        <div class="w-[250px] border-2 border-solid border-[#111] rounded-lg h-fit ">
-            <div class="w-full shadow-foo border-b-2 rounded-lg border-solid border-[#111]">
+        <a  href="{{ route('detail', $data->id) }}" class="w-[250px] h-['500px'] flex flex-col justify-between shadow-lg rounded-lg ">
+            <div class="w-full shadow-foo ">
                 <div class="relative">
-                    <span class="material-symbols-outlined border-2 border-solid border-[#111] p-2 rounded-full absolute right-2 top-2 bg-white">favorite</span>
+                    <span class="material-symbols-outlined  p-2 rounded-full absolute right-2 top-2 bg-white">favorite</span>
                 </div>
-                <img src="{{ asset('storage/images/'.$data->gambar) }}" class="rounded-lg w-full" alt="">
+                <div class="h-[200px] w-full overflow-clip">
+                    <img src="{{ asset('storage/images/'.$data->gambar) }}" class="rounded-lg h-full w-full" alt="">
+                </div>
             </div>
             <div class="p-3">
                 <h2 class="font-semibold text-xl">{{ $data->nama }}</h2>
@@ -26,7 +28,7 @@
                     <button class="p-2 pl-4 pr-4 rounded-full bg-[#E32227] text-white border-2 border-solid border-[#111] shadow-foo">Buy Now</button>
                 </div>
             </div>
-        </div>
+        </a>
         @endforeach
     </div>
 
