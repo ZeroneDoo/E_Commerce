@@ -22,4 +22,10 @@ class UserController extends Controller
     public function cart(){
         return view('frontend.Cart');
     }
+
+    public function checkout($id){
+        $data = Barang::find($id);
+
+        return view('frontend.Checkout', compact('data'));
+    }
 }

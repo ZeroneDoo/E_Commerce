@@ -21,6 +21,7 @@ Route::controller(UserController::class)->group(function(){
         Route::get('/', 'viewMain')->name('home');
         Route::get('/detail/{id}', 'detail')->name('detail');
         Route::get('/cart', 'cart')->name('cart');
+        Route::get('/checkout/{id}', 'checkout')->name('checkout');
     });
 });
 

@@ -4,15 +4,15 @@
 {{-- <h1 class="my-2">Popular on this week</h1> --}}
     <div class="grid p-9 xl:grid-cols-5 lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 gap-12 mx-auto w-fit">
         @foreach ($datas as $data)
-        <a  href="{{ route('detail', $data->id) }}" class="w-[250px] h-['500px'] flex flex-col justify-between shadow-lg rounded-lg ">
-            <div class="w-full shadow-foo ">
+        <div class="w-[250px] h-['500px'] flex flex-col justify-between shadow-lg rounded-lg ">
+            <a href="{{ route('detail', $data->id) }}" class="w-full shadow-foo ">
                 <div class="relative">
                     <span class="material-symbols-outlined  p-2 rounded-full absolute right-2 top-2 bg-white">favorite</span>
                 </div>
                 <div class="h-[200px] w-full overflow-clip">
                     <img src="{{ asset('storage/images/'.$data->gambar) }}" class="rounded-lg h-full w-full" alt="">
                 </div>
-            </div>
+            </a>
             <div class="p-3">
                 <h2 class="font-semibold text-xl">{{ $data->nama }}</h2>
                 {{-- <h3 class="text-base">seller name</h3> --}}
@@ -25,10 +25,10 @@
                 </svg>
                 <div class="flex justify-between flex-col gap-3 items-center">
                     <h2 class="font-semibold text-xl">Rp {{ $data->harga }}</h2>
-                    <button class="p-2 pl-4 pr-4 rounded-full bg-[#E32227] text-white border-2 border-solid border-[#111] shadow-foo">Buy Now</button>
+                    <button onclick="location.href='{{ route('checkout', $data->id) }}'" class="z-10 p-2 pl-4 pr-4 rounded-full bg-primary text-white shadow-foo">Buy Now</button>
                 </div>
             </div>
-        </a>
+        </div>
         @endforeach
     </div>
 
