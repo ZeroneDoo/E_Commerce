@@ -1,29 +1,29 @@
 <div
-    class="md:fixed md:w-full md:top-0 md:z-20 flex flex-row flex-wrap items-center bg-white p-6 border-b border-gray-300">
+    class="flex flex-row flex-wrap items-center bg-white p-6 border-b border-gray-300">
 
     <!-- logo -->
     <div class="flex-none w-56 flex flex-row items-center">
         <img src="{{ asset('assets/img/logo.png') }}" class="w-10 flex-none">
         <strong class="capitalize ml-1 flex-1">Tugas Toko Online</strong>
 
-        <button id="sliderBtn" class="flex-none text-right text-gray-900 hidden md:block">
+        <button id="sliderBtn" class="flex-none text-right text-gray-900 hidden">
             <i class="fad fa-list-ul"></i>
         </button>
     </div>
     <!-- end logo -->
 
     <!-- navbar content toggle -->
-    <button id="navbarToggle" class="hidden md:block md:fixed right-0 mr-6">
+    <button id="navbarToggle" class="hidden right-0 mr-6">
         <i class="fad fa-chevron-double-down"></i>
     </button>
     <!-- end navbar content toggle -->
 
     <!-- navbar content -->
     <div id="navbar"
-        class="animated md:hidden md:fixed md:top-0 md:w-full md:left-0 md:mt-16 md:border-t md:border-b md:border-gray-200 md:p-10 md:bg-white flex-1 pl-3 flex flex-row flex-wrap justify-between items-center md:flex-col md:items-center">
+        class="animated  flex-1 pl-3 flex flex-row flex-wrap justify-between items-center ">
         <!-- left -->
         <div
-            class="text-gray-600 md:w-full md:flex md:flex-row md:justify-evenly md:pb-10 md:mb-10 md:border-b md:border-gray-200">
+            class="text-gray-600">
             <a class="mr-2 transition duration-500 ease-in-out hover:text-gray-900" href="#" title="email"><i
                     class="fad fa-envelope-open-text"></i></a>
             <a class="mr-2 transition duration-500 ease-in-out hover:text-gray-900" href="#" title="email"><i
@@ -39,7 +39,7 @@
         <div class="flex flex-row-reverse items-center">
 
             <!-- user -->
-            <div class="dropdown relative md:static">
+            <div class="dropdown relative">
 
                 <button class="menu-btn focus:outline-none focus:shadow-outline flex flex-wrap items-center">
                     <div class="w-8 h-8 overflow-hidden rounded-full">
@@ -55,15 +55,17 @@
                 <button class="hidden fixed top-0 left-0 z-10 w-full h-full menu-overflow"></button>
 
                 <div
-                    class="text-gray-500 menu hidden md:mt-10 md:w-full rounded bg-white shadow-md absolute z-20 right-0 w-40 mt-5 py-2 animated faster">
+                    class="text-gray-500 menu hidden rounded bg-white shadow-md absolute z-20 right-0 w-40 mt-5 py-2 animated faster">
 
-                    
+
                     <!-- item -->
-                    <a class="px-4 py-2 block capitalize font-medium text-sm tracking-wide bg-white hover:bg-gray-200 hover:text-gray-900 transition-all duration-300 ease-in-out"
-                        href="#">
+                    <form action="{{ route('logout') }}" method="post">
+                        @csrf
+                        <button type="submit" class="px-4 py-2 block capitalize font-medium text-sm tracking-wide bg-white hover:bg-gray-200 hover:text-gray-900 transition-all duration-300 ease-in-out">
                         <i class="fad fa-user-times text-xs mr-1"></i>
                         log out
-                    </a>
+                        </button>
+                    </form>
                     <!-- end item -->
 
                 </div>
@@ -71,7 +73,7 @@
             <!-- end user -->
 
             <!-- notifcation -->
-            <div class="dropdown relative mr-5 md:static">
+            <div class="dropdown relative mr-5">
 
                 <button
                     class="text-gray-500 menu-btn p-0 m-0 hover:text-gray-900 focus:text-gray-900 focus:outline-none transition-all ease-in-out duration-300">
@@ -81,7 +83,7 @@
                 <button class="hidden fixed top-0 left-0 z-10 w-full h-full menu-overflow"></button>
 
                 <div
-                    class="menu hidden rounded bg-white md:right-0 md:w-full shadow-md absolute z-20 right-0 w-84 mt-5 py-2 animated faster">
+                    class="menu hidden rounded bg-white shadow-md absolute z-20 right-0 w-84 mt-5 py-2 animated faster">
                     <!-- top -->
                     <div class="px-4 py-2 flex flex-row justify-between items-center capitalize font-semibold text-sm">
                         <h1>notifications</h1>
@@ -95,7 +97,7 @@
                     <!-- body -->
 
                     <!-- item -->
-                    <a class="flex flex-row items-center justify-start px-4 py-4 block capitalize font-medium text-sm tracking-wide bg-white hover:bg-gray-200 transition-all duration-300 ease-in-out"
+                    <a class="flex flex-row items-center justify-start px-4 py-4 capitalize font-medium text-sm tracking-wide bg-white hover:bg-gray-200 transition-all duration-300 ease-in-out"
                         href="#">
 
                         <div class="px-3 py-2 rounded mr-3 bg-gray-100 border border-gray-300">

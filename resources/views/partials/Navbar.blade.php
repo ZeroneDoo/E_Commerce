@@ -27,7 +27,10 @@
         <div class="dropdown dropdown-end">
             <label tabindex="0" class="btn btn-ghost btn-circle avatar">
                 <div class="w-10 rounded-full">
-                    <img src="/images/stock/photo-1534528741775-53994a69daeb.jpg" />
+                    @php
+                        $foto = Auth::check() ? Auth::user()->profile : 'default.png';
+                    @endphp
+                    <img src='{{ asset("storage/images/$foto") }}' />
                 </div>
             </label>
             <ul tabindex="0"
@@ -39,7 +42,12 @@
                     </a>
                 </li>
                 <li><a>Settings</a></li>
-                <li><a>Logout</a></li>
+                <li>
+                    <form action="{{ route('logout') }}" method="post">
+                        @csrf
+                        <button type="submit">Logout</button>
+                    </form>
+                </li>
             </ul>
         </div>
     </div>

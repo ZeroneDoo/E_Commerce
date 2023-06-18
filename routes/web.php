@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\AuthController;
+use App\Http\Controllers\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,12 +16,27 @@ use App\Http\Controllers\AdminController;
 |
 */
 
-Route::get('/home', function () {
-    return view('frontend.Homepage');
+Route::controller(UserController::class)->group(function(){
+    Route::middleware(['isLogin'])->group(function(){
+        Route::get('/', 'viewMain')->name('home');
+    });
 });
 
 Route::controller(AdminController::class)->group(function(){
-    Route::get("/admin", "index")->name("admin");
-    Route::get("/kategori", "kategori")->name("kategori");
+    Route::middleware(['auth', 'isLoginAdmin'])->group(function(){
+        Route::get("/admin", "viewHome")->name("view.home");
+        Route::get("/create", "viewBarang")->name("view.barang");
+        Route::post("/create", "postBarang")->name("post.barang");
+        Route::get("/edit/{id}", "editBarang")->name("edit.barang");
+        Route::post("/edit/{id}", "putBarang")->name("put.barang");
+        Route::get("/delete/{id}", "deleteBarang")->name("delete.barang");
+    });
+});
 
+Route::controller(AuthController::class)->group(function(){
+    Route::middleware(['guest'])->group(function(){
+        Route::get('/login', 'viewLogin')->name('view.login');
+        Route::post('/login', 'postLogin')->name('post.login');
+    });
+    Route::post('/logout', 'postLogout')->name('logout');
 });

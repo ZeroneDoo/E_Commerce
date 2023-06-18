@@ -2,29 +2,23 @@
 
 namespace App\Http\Middleware;
 
-use App\Providers\RouteServiceProvider;
 use Closure;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Symfony\Component\HttpFoundation\Response;
 
-class RedirectIfAuthenticated
+class isLoginAdmin
 {
     /**
      * Handle an incoming request.
      *
      * @param  \Closure(\Illuminate\Http\Request): (\Symfony\Component\HttpFoundation\Response)  $next
      */
-    public function handle(Request $request, Closure $next, string ...$guards): Response
+    public function handle(Request $request, Closure $next): Response
     {
-        $guards = empty($guards) ? [null] : $guards;
-
-        foreach ($guards as $guard) {
-            if (Auth::guard($guard)->check()) {
-                return back()->with('msg_info', "Anda sudah login");
-            }
+        if(Auth::check() && Auth::user()->role != 'admin'){
+            return back()->with('msg_info', 'Anda tidak di izinkan ke halaman tersebut');
         }
-
         return $next($request);
     }
 }

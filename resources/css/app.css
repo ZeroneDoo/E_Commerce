@@ -1,3 +1,51 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+.btn-primary {
+    @apply text-white bg-primary py-2 px-3 rounded hover:bg-[#e32227] active:bg-[#e32227] transition-colors shadow-md
+}
+
+.btn-primary-2 {
+    @apply text-white bg-green-600 py-2 px-3 rounded hover:bg-green-700 active:bg-green-800 transition-colors shadow-md
+}
+
+.btn-emerald {
+    @apply flex items-center py-2 px-2 rounded transition-colors bg-emerald-500 hover:bg-emerald-600 active:bg-emerald-700 text-white
+}
+
+.wysiwyg-editor{
+    @apply text-gray-600
+}
+
+.wysiwyg-editor table td{
+    @apply px-2 py-1 text-gray-600
+}
+
+.wysiwyg-editor table td:first-child{
+    @apply font-bold
+}
+
+.wysiwyg-editor h3, h4, h5 {
+    @apply mt-4 font-bold
+}
+
+.input-box-primary {
+    @apply outline outline-2 rounded p-2 outline-gray-200 focus:outline-primary focus:shadow-primary focus:shadow-sm
+}
+
+.input-box-error {
+    @apply outline outline-2 rounded p-2 outline-red-600 focus:outline-primary focus:shadow-primary focus:shadow-sm
+}
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    /* display: none; <- Crashes Chrome on hover */
+    -webkit-appearance: none;
+    margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+}
+
+.input-checkbox {
+    accent-color: #9333ea;
+}
